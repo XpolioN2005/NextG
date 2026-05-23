@@ -1,0 +1,23 @@
+---
+// Hero.astro
+---
+
+<section id="hero" class="relative w-full min-h-[70vh] flex items-center justify-center overflow-hidden py-24 px-6">
+  <!-- Subtle Background Effects -->
+  <div class="absolute inset-0 z-0 pointer-events-none opacity-40">
+    <div class="absolute top-1/4 left-1/4 w-96 h-96 bg-brand-surface rounded-full blur-[120px]"></div>
+    <div class="absolute bottom-1/4 right-1/4 w-[30rem] h-[30rem] bg-brand-card rounded-full blur-[150px]"></div>
+    <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[40rem] h-[40rem] bg-brand-accent/5 rounded-full blur-[100px]"></div>
+  </div>
+
+  <div class="relative z-10 max-w-[800px] mx-auto text-center flex flex-col items-center gap-8">
+    <h1 class="font-sora text-4xl md:text-5xl lg:text-6xl font-medium tracking-tight text-brand-text leading-tight drop-shadow-sm">
+      Quiet digital experiences<br class="hidden sm:block" /> for modern devices.
+    </h1>
+    
+    <p class="font-inter text-lg md:text-xl text-brand-muted max-w-[600px] leading-relaxed font-light">
+      Crafting refined games and applications across mobile and desktop. 
+      Built from the ground up for usability and performance.
+    </p>
+  </div>
+</section>

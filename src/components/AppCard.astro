@@ -1,0 +1,54 @@
+---
+// AppCard.astro
+interface Props {
+  name: string;
+  description: string;
+  tags?: string[];
+  slug: string;
+  iconPath?: string;
+}
+
+const { name, description, tags = [], slug, iconPath } = Astro.props;
+---
+
+<article class="flex-none w-[280px] md:w-[320px] bg-brand-card rounded-2xl p-5 border border-brand-border/60 hover:border-brand-accent/30 hover:bg-brand-surface transition-all duration-300 shadow-sm hover:shadow-md hover:-translate-y-1 group flex flex-col gap-4">
+  <a href={`/apps/${slug}`} class="block h-full focus:outline-none focus:ring-2 focus:ring-brand-accent focus:border-transparent rounded-xl" aria-label={`View details for ${name}`}>
+    <!-- Icon & Header -->
+    <header class="flex items-center gap-4 mb-3">
+      <div class="w-12 h-12 rounded-xl bg-brand-surface border border-brand-border flex items-center justify-center shrink-0 text-brand-muted group-hover:text-brand-accent transition-colors">
+        {iconPath ? (
+          <img src={iconPath} alt={`${name} icon`} class="w-8 h-8 object-contain" loading="lazy" />
+        ) : (
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M10.5 1.5H8.25A2.25 2.25 0 0 0 6 3.75v16.5a2.25 2.25 0 0 0 2.25 2.25h7.5A2.25 2.25 0 0 0 18 20.25V3.75a2.25 2.25 0 0 0-2.25-2.25H13.5m-3 0V3h3V1.5m-3 0h3m-3 18.75h3" />
+          </svg>
+        )}
+      </div>
+      <div>
+        <h3 class="font-sora text-lg font-semibold text-brand-text group-hover:text-brand-accent transition-colors">{name}</h3>
+      </div>
+    </header>
+    
+    <!-- Preview Image Placeholder (Matte surface) -->
+    <div class="w-full h-32 bg-brand-bg rounded-lg mb-4 border border-brand-border/30 overflow-hidden relative">
+      <!-- Faint texture placeholder -->
+      <div class="absolute inset-0 bg-gradient-to-br from-brand-surface/20 to-transparent"></div>
+    </div>
+
+    <!-- Description -->
+    <p class="font-inter text-sm text-brand-muted line-clamp-2 leading-relaxed flex-grow">
+      {description}
+    </p>
+
+    <!-- Tags -->
+    {tags.length > 0 && (
+      <footer class="mt-4 flex flex-wrap gap-2">
+        {tags.map(tag => (
+          <span class="text-xs font-medium text-brand-muted bg-brand-bg px-2 py-1 rounded-md border border-brand-border/50">
+            {tag}
+          </span>
+        ))}
+      </footer>
+    )}
+  </a>
+</article>

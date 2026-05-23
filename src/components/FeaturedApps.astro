@@ -1,0 +1,61 @@
+---
+import AppCard from './AppCard.astro';
+
+const apps = [
+  {
+    name: "Aura",
+    description: "A calming puzzle experience designed to reduce anxiety through color matching and ambient soundscapes.",
+    tags: ["Game", "Mobile"],
+    slug: "aura"
+  },
+  {
+    name: "Focus Flow",
+    description: "Minimalist productivity timer that adapts to your natural working rhythm and prevents burnout.",
+    tags: ["Utility", "Desktop"],
+    slug: "focus-flow"
+  },
+  {
+    name: "Zenith",
+    description: "Atmospheric exploration game set in a quiet, sprawling archipelago.",
+    tags: ["Game", "Desktop"],
+    slug: "zenith"
+  },
+  {
+    name: "Echo Notes",
+    description: "Distraction-free markdown editor with seamless sync across all your modern devices.",
+    tags: ["Utility", "Mobile", "Desktop"],
+    slug: "echo-notes"
+  }
+];
+---
+
+<section id="apps" class="w-full py-24 bg-brand-bg relative z-10" aria-labelledby="apps-heading">
+  <div class="max-w-[1200px] mx-auto px-6 mb-12">
+    <h2 id="apps-heading" class="font-sora text-3xl font-semibold text-brand-text mb-4">Featured Experiences</h2>
+    <p class="font-inter text-brand-muted max-w-2xl text-lg">
+      Our carefully curated selection of software. Built for clarity, performance, and peace of mind.
+    </p>
+  </div>
+
+  <!-- Swipeable Card Rail -->
+  <div class="w-full overflow-x-auto pb-8 hide-scrollbar scroll-smooth snap-x snap-mandatory px-6 md:px-0">
+    <div class="max-w-[1200px] mx-auto flex gap-6 w-max md:w-auto snap-center">
+      {apps.map(app => (
+        <div class="snap-start scroll-ml-6">
+          <AppCard {...app} />
+        </div>
+      ))}
+    </div>
+  </div>
+</section>
+
+<style>
+  /* Hide scrollbar for cleaner look but keep functionality */
+  .hide-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+  .hide-scrollbar {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+</style>
