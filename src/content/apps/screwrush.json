@@ -1,0 +1,31 @@
+{
+	"name": "Screw Puzzle",
+
+	"tagline": "Relaxing nut & bolt puzzle challenges for sharp minds.",
+
+	"slug": "screw-puzzle",
+
+	"description": "Screw Puzzle: Wood Nut & Bolt is a satisfying brain teaser game built around logic, focus, and problem-solving. Unscrew bolts, match nuts correctly, and clear increasingly difficult levels in a calming wooden puzzle environment.\n\nDesigned for quick play sessions and relaxing gameplay, Screw Puzzle combines smooth controls with progressively challenging mechanics that test your thinking skills.\n\nWhether you want a casual time-pass game or a proper logic challenge, Screw Puzzle delivers an addictive and rewarding puzzle experience for players of all ages.",
+
+	"tags": ["puzzle", "logic", "casual", "offline"],
+
+	"iconPath": "/apps/screw-puzzle/icon.webp",
+
+	"screenshots": [
+		"/apps/screw-puzzle/1.jpg",
+		"/apps/screw-puzzle/2.jpg",
+		"/apps/screw-puzzle/3.jpg"
+	],
+
+	"featured": true,
+
+	"platform": "mobile",
+
+	"status": "live",
+
+	"playStoreUrl": "https://play.google.com/store/apps/details?id=com.screwrush.easytohard",
+
+	"privacyPolicy": "privacy policy coming soon",
+
+	"terms": "terms coming soon"
+}

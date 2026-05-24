@@ -1,0 +1,34 @@
+{
+	"name": "Indian Bike Driving 3D Codes",
+
+	"tagline": "Codes, tips, and guides for Indian bike driving game fans.",
+
+	"slug": "cheat-code",
+
+	"description": "Indian Bike Driving 3D Codes is a companion app built for players who enjoy open-world bike and car driving games. The app provides organized game codes, gameplay tips, and useful references to help players discover bikes, cars, planes, and more.\n\nDesigned with a simple and easy-to-use interface, the app makes browsing and using codes quick and convenient. Regular updates keep the content fresh with new additions and improvements.\n\nThis app is intended as a fan-made guide and reference tool for entertainment purposes only. It does not modify game files, include hacking tools, or support cheating in online or multiplayer modes.",
+
+	"tags": ["tools", "guide", "codes"],
+
+	"iconPath": "/apps/cheat-code/icon.webp",
+
+	"bannerPath": "/apps/cheat-code/banner.webp",
+
+	"screenshots": [
+		"/apps/cheat-code/1.jpg",
+		"/apps/cheat-code/2.jpg",
+		"/apps/cheat-code/3.jpg",
+		"/apps/cheat-code/4.jpg"
+	],
+
+	"featured": true,
+
+	"platform": "mobile",
+
+	"status": "live",
+
+	"playStoreUrl": "https://play.google.com/store/apps/details?id=com.allindian.bike.driving.cheat",
+
+	"privacyPolicy": "https://hindigurujitips.blogspot.com/2025/03/indian-bike-driving-cheats.html",
+
+	"terms": "Coming soon"
+}

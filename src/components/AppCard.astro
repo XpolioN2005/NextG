@@ -71,12 +71,12 @@ const platformLabel: Record<string, string> = {
 
     <!-- Status Badge -->
     <span
-      class={`absolute top-3 right-3 text-xs font-medium px-2 py-1 rounded-full border ${
+      class={`absolute top-3 right-3 text-xs font-medium px-2.5 py-1 rounded-full border shadow-sm ${
         status === 'live'
-          ? 'text-brand-accent border-brand-accent/30 bg-brand-accent/10'
+          ? 'text-brand-accent border-brand-accent/20 bg-black/80'
           : status === 'beta'
-          ? 'text-amber-400 border-amber-400/30 bg-amber-400/10'
-          : 'text-brand-muted border-brand-border/60 bg-brand-card'
+          ? 'text-amber-300 border-amber-400/20 bg-black/80'
+          : 'text-brand-muted border-brand-border/40 bg-black/80'
       }`}
     >
       {statusLabel[status]}

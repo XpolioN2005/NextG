@@ -37,7 +37,11 @@ const { app } = Astro.props;
 
       <div class="relative max-w-[1200px] mx-auto px-6 py-20">
 
-        <div class="grid lg:grid-cols-[1.2fr_0.8fr] gap-12 items-center">
+        <div class={`grid gap-12 items-center ${
+          app.bannerPath
+            ? 'lg:grid-cols-[1.2fr_0.8fr]'
+            : 'lg:grid-cols-1'
+        }`}>
 
           <!-- Left -->
           <div>
@@ -143,6 +147,7 @@ const { app } = Astro.props;
 
     <!-- Description -->
     <section class="py-20 px-6 border-b border-brand-border/30">
+
       <div class="max-w-[900px] mx-auto">
 
         <p class="text-brand-accent text-sm font-medium tracking-widest uppercase mb-3">
@@ -158,36 +163,49 @@ const { app } = Astro.props;
         </div>
 
       </div>
+
     </section>
+    
+  <!-- Screenshots -->
+  {
+    app.screenshots.length > 0 && (
+      <section class="py-20 border-t border-brand-border/30">
 
-    <!-- Screenshots -->
-    {
-      app.screenshots.length > 0 && (
-        <section class="py-20 px-6">
+        <div class="max-w-[1200px] mx-auto">
 
-          <div class="max-w-[1200px] mx-auto">
+          <!-- Header -->
+          <div class="px-6 mb-10">
 
-            <div class="mb-10">
-              <p class="text-brand-accent text-sm font-medium tracking-widest uppercase mb-3">
-                Gallery
-              </p>
+            <p class="text-brand-accent text-sm font-medium tracking-widest uppercase mb-3">
+              Gallery
+            </p>
 
-              <h2 class="font-sora text-3xl font-semibold text-brand-text">
-                Screenshots
-              </h2>
-            </div>
+            <h2 class="font-sora text-3xl font-semibold text-brand-text">
+              Screenshots
+            </h2>
 
-            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+          </div>
+
+          <!-- Scroll Area -->
+          <div class="overflow-x-auto hide-scrollbar scroll-smooth">
+
+            <div class="flex gap-6 px-6 pb-2">
 
               {
                 app.screenshots.map((image) => (
-                  <div class="group relative overflow-hidden rounded-2xl border border-brand-border/50 bg-brand-card">
-                    <img
-                      src={image}
-                      alt={`${app.name} screenshot`}
-                      class="w-full h-full object-cover transition duration-500 group-hover:scale-[1.02]"
-                      loading="lazy"
-                    />
+                  <div class="shrink-0">
+
+                    <div class="group overflow-hidden rounded-2xl border border-brand-border/50 bg-brand-card shadow-lg">
+
+                      <img
+                        src={image}
+                        alt={`${app.name} screenshot`}
+                        class="h-[560px] w-auto max-w-none object-contain transition duration-500 group-hover:scale-[1.015]"
+                        loading="lazy"
+                      />
+
+                    </div>
+
                   </div>
                 ))
               }
@@ -196,11 +214,24 @@ const { app } = Astro.props;
 
           </div>
 
-        </section>
-      )
-    }
+        </div>
+
+      </section>
+    )
+  }
 
   </main>
 
   <Footer />
 </Layout>
+
+<style>
+  .hide-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+
+  .hide-scrollbar {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+</style>
