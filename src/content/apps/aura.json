@@ -1,0 +1,9 @@
+{
+  "name": "Aura",
+  "description": "A calming puzzle experience designed to reduce anxiety through color matching and ambient soundscapes.",
+  "tags": ["Game", "Mobile"],
+  "slug": "aura",
+  "featured": true,
+  "platform": "mobile",
+  "status": "live"
+}

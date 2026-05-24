@@ -1,0 +1,9 @@
+{
+  "name": "Echo Notes",
+  "description": "Distraction-free markdown editor with seamless sync across all your modern devices.",
+  "tags": ["Utility", "Mobile", "Desktop"],
+  "slug": "echo-notes",
+  "featured": false,
+  "platform": "cross-platform",
+  "status": "live"
+}
