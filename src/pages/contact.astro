@@ -1,0 +1,31 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Navbar from '../components/Navbar.astro';
+import Footer from '../components/Footer.astro';
+import Contact from '../components/Contact.astro';
+---
+
+<Layout 
+  title="Contact — Next G Solution" 
+  description="Get in touch with Next G Solution for inquiries, support, or collaboration details."
+>
+  <Navbar />
+  <main class="flex-grow">
+    <!-- Standalone Header -->
+    <section class="py-20 px-6 border-b border-brand-border/50 bg-brand-surface">
+      <div class="max-w-[1200px] mx-auto">
+        <p class="text-brand-accent text-sm font-medium font-inter tracking-widest uppercase mb-4">Connect</p>
+        <h1 class="font-sora text-4xl md:text-5xl font-semibold text-brand-text mb-5 leading-tight">
+          Contact Us
+        </h1>
+        <p class="font-inter text-brand-muted text-lg max-w-xl leading-relaxed">
+          Reach out for support, partnerships, or just to say hello. We typically respond within 1-2 business days.
+        </p>
+      </div>
+    </section>
+
+    <!-- Main Contact Component -->
+    <Contact />
+  </main>
+  <Footer />
+</Layout>

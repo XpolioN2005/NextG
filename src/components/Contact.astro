@@ -2,49 +2,77 @@
 // Contact.astro
 ---
 
-<section id="contact" class="w-full py-24 bg-brand-bg relative z-10" aria-labelledby="contact-heading">
-  <div class="max-w-[1200px] mx-auto px-6 grid grid-cols-1 md:grid-cols-2 gap-16">
-    
-    <!-- Contact Info -->
+<section
+  id="contact"
+  class="w-full py-24 bg-brand-bg relative z-10"
+  aria-labelledby="contact-heading"
+>
+  <div class="max-w-[1200px] mx-auto px-6 grid grid-cols-1 md:grid-cols-[1fr_auto_1fr] gap-16">
+
+    <!-- Left -->
     <div>
-      <h2 id="contact-heading" class="font-sora text-3xl font-semibold text-brand-text mb-6">Get in Touch</h2>
-      <p class="font-inter text-brand-muted text-lg mb-8 leading-relaxed max-w-md">
+      <h2
+        id="contact-heading"
+        class="font-sora text-3xl font-semibold text-brand-text mb-6"
+      >
+        Get in Touch
+      </h2>
+
+      <p class="font-inter text-brand-muted text-lg leading-relaxed max-w-md">
         Whether you have a question about our apps or want to discuss a potential collaboration, we're always open to a quiet conversation.
       </p>
-      
-      <div class="space-y-4">
-        <a href="mailto:hello@nextgsolution.com" class="inline-flex items-center gap-3 text-brand-text hover:text-brand-accent transition-colors focus:outline-none focus:ring-2 focus:ring-brand-accent rounded-sm px-1">
-          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-5 h-5 text-brand-muted">
-            <path stroke-linecap="round" stroke-linejoin="round" d="M21.75 6.75v10.5a2.25 2.25 0 0 1-2.25 2.25h-15a2.25 2.25 0 0 1-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0 0 19.5 4.5h-15a2.25 2.25 0 0 0-2.25 2.25m19.5 0v.243a2.25 2.25 0 0 1-1.07 1.916l-7.5 4.615a2.25 2.25 0 0 1-2.36 0L3.32 8.91a2.25 2.25 0 0 1-1.07-1.916V6.75" />
-          </svg>
-          <span class="font-medium">hello@nextgsolution.com</span>
-        </a>
-      </div>
     </div>
 
-    <!-- Contact Form -->
-    <form class="bg-brand-card p-8 rounded-2xl border border-brand-border/60 shadow-sm" aria-label="Contact form">
-      <div class="space-y-5">
-        <div>
-          <label for="name" class="block text-sm font-medium text-brand-text mb-1.5">Name</label>
-          <input type="text" id="name" name="name" required class="w-full bg-brand-surface border border-brand-border/80 rounded-lg px-4 py-2.5 text-brand-text focus:outline-none focus:ring-2 focus:ring-brand-accent focus:border-transparent transition-all" />
-        </div>
-        
-        <div>
-          <label for="email" class="block text-sm font-medium text-brand-text mb-1.5">Email</label>
-          <input type="email" id="email" name="email" required class="w-full bg-brand-surface border border-brand-border/80 rounded-lg px-4 py-2.5 text-brand-text focus:outline-none focus:ring-2 focus:ring-brand-accent focus:border-transparent transition-all" />
-        </div>
-        
-        <div>
-          <label for="message" class="block text-sm font-medium text-brand-text mb-1.5">Message</label>
-          <textarea id="message" name="message" rows="4" required class="w-full bg-brand-surface border border-brand-border/80 rounded-lg px-4 py-2.5 text-brand-text focus:outline-none focus:ring-2 focus:ring-brand-accent focus:border-transparent transition-all resize-none"></textarea>
-        </div>
-        
-        <button type="submit" class="w-full bg-brand-surface hover:bg-brand-border text-brand-text font-medium py-3 rounded-lg border border-brand-border hover:border-brand-accent/50 transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-brand-accent">
-          Send Message
-        </button>
+    <!-- Divider -->
+    <div
+      class="hidden md:block w-px self-stretch bg-brand-border/50"
+      aria-hidden="true"
+    ></div>
+
+    <!-- Right -->
+    <div class="flex flex-col justify-center gap-8">
+
+      <div>
+        <p class="text-sm uppercase tracking-[0.18em] text-brand-muted mb-2 font-inter">
+          Email
+        </p>
+
+        <a
+          href="mailto:hello@nextgsolution.com"
+          class="inline-flex items-center gap-3 text-brand-text hover:text-brand-accent transition-colors focus:outline-none"
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke-width="1.5"
+            stroke="currentColor"
+            class="w-5 h-5 text-brand-muted"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              d="M21.75 6.75v10.5a2.25 2.25 0 0 1-2.25 2.25h-15a2.25 2.25 0 0 1-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0 0 19.5 4.5h-15a2.25 2.25 0 0 0-2.25 2.25m19.5 0v.243a2.25 2.25 0 0 1-1.07 1.916l-7.5 4.615a2.25 2.25 0 0 1-2.36 0L3.32 8.91a2.25 2.25 0 0 1-1.07-1.916V6.75"
+            />
+          </svg>
+
+          <span class="font-inter font-medium">
+            hello@nextgsolution.com
+          </span>
+        </a>
       </div>
-    </form>
-    
+
+      <div class="border-t border-brand-border/40 pt-6">
+        <p class="text-sm uppercase tracking-[0.18em] text-brand-muted mb-2 font-inter">
+          Availability
+        </p>
+
+        <p class="font-inter text-brand-text">
+          Open for selected collaborations
+        </p>
+      </div>
+
+    </div>
+
   </div>
 </section>

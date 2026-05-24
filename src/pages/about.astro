@@ -1,0 +1,66 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Navbar from '../components/Navbar.astro';
+import Footer from '../components/Footer.astro';
+import About from '../components/About.astro';
+---
+
+<Layout 
+  title="About — Next G Solution" 
+  description="Learn about Next G Solution's philosophy of crafting calm, purposeful, and high-performance digital experiences."
+>
+  <Navbar />
+  <main class="flex-grow">
+    <!-- Standalone Header -->
+    <section class="py-20 px-6 border-b border-brand-border/50 bg-brand-surface">
+      <div class="max-w-[1200px] mx-auto">
+        <p class="text-brand-accent text-sm font-medium font-inter tracking-widest uppercase mb-4">Our Mission</p>
+        <h1 class="font-sora text-4xl md:text-5xl font-semibold text-brand-text mb-5 leading-tight">
+          About Next G Solution
+        </h1>
+        <p class="font-inter text-brand-muted text-lg max-w-xl leading-relaxed">
+          Crafting calm, responsive, and performance-focused games and applications for mobile and desktop platforms.
+        </p>
+      </div>
+    </section>
+
+    <!-- Main About Component -->
+    <About />
+
+    <!-- Additional Philosophy Details (to make the page feel rich and premium) -->
+    <section class="w-full py-24 bg-brand-bg relative z-10 border-t border-brand-border/50" aria-labelledby="principles-heading">
+      <div class="max-w-[1200px] mx-auto px-6">
+        <h2 id="principles-heading" class="font-sora text-2xl md:text-3xl font-semibold text-brand-text mb-12 text-center">
+          Our Core Principles
+        </h2>
+        
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <!-- Principle 1 -->
+          <div class="bg-brand-card p-8 rounded-2xl border border-brand-border/60">
+            <h3 class="font-sora text-lg font-semibold text-brand-text mb-4">Restraint</h3>
+            <p class="font-inter text-sm text-brand-muted leading-relaxed">
+              We design with breathing room. Our apps do not fight for your attention with constant notifications, bright animations, or endless scroll feeds.
+            </p>
+          </div>
+          
+          <!-- Principle 2 -->
+          <div class="bg-brand-card p-8 rounded-2xl border border-brand-border/60">
+            <h3 class="font-sora text-lg font-semibold text-brand-text mb-4">Performance</h3>
+            <p class="font-inter text-sm text-brand-muted leading-relaxed">
+              Software should be lightweight and fast. We build pages statically with minimal bundle sizes to load instantly and run efficiently.
+            </p>
+          </div>
+          
+          <!-- Principle 3 -->
+          <div class="bg-brand-card p-8 rounded-2xl border border-brand-border/60">
+            <h3 class="font-sora text-lg font-semibold text-brand-text mb-4">Privacy</h3>
+            <p class="font-inter text-sm text-brand-muted leading-relaxed">
+              We respect your data. Our experiences do not require sign-ins unless absolutely necessary, nor do they track you in the background.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+  <Footer />
+</Layout>
