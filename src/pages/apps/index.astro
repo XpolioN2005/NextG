@@ -2,6 +2,7 @@
 import Layout from '../../layouts/Layout.astro';
 import Navbar from '../../components/Navbar.astro';
 import Footer from '../../components/Footer.astro';
+import AppCard from '../../components/AppCard.astro';
 import { getCollection } from 'astro:content';
 
 // Statically rendered — no client-side JS needed
@@ -13,20 +14,9 @@ const apps = allApps
   .sort((a, b) => {
     if (b.featured && !a.featured) return 1;
     if (a.featured && !b.featured) return -1;
+
     return a.name.localeCompare(b.name);
   });
-
-const statusLabel: Record<string, string> = {
-  live: 'Live',
-  beta: 'Beta',
-  'coming-soon': 'Coming Soon',
-};
-
-const platformLabel: Record<string, string> = {
-  mobile: 'Mobile',
-  desktop: 'Desktop',
-  'cross-platform': 'Cross-Platform',
-};
 ---
 
 <Layout
@@ -36,98 +26,59 @@ const platformLabel: Record<string, string> = {
   <Navbar />
 
   <main class="flex-1">
+
     <!-- Page Header -->
     <section class="py-20 px-6 border-b border-brand-border/50 bg-brand-surface">
       <div class="max-w-[1200px] mx-auto">
-        <p class="text-brand-accent text-sm font-medium font-inter tracking-widest uppercase mb-4">Our Work</p>
+
+        <p class="text-brand-accent text-sm font-medium font-inter tracking-widest uppercase mb-4">
+          Our Work
+        </p>
+
         <h1 class="font-sora text-4xl md:text-5xl font-semibold text-brand-text mb-5 leading-tight">
           Apps & Games
         </h1>
+
         <p class="font-inter text-brand-muted text-lg max-w-xl leading-relaxed">
           A growing catalogue of carefully made software — games and applications designed with care for modern devices.
         </p>
+
       </div>
     </section>
 
     <!-- Apps Grid -->
-    <section class="py-20 px-6" aria-label="All apps and games">
+    <section
+      class="py-20 px-6"
+      aria-label="All apps and games"
+    >
       <div class="max-w-[1200px] mx-auto">
 
         {apps.length === 0 ? (
-          <p class="text-brand-muted font-inter text-center py-24 text-lg">No apps published yet. Check back soon.</p>
+
+          <p class="text-brand-muted font-inter text-center py-24 text-lg">
+            No apps published yet. Check back soon.
+          </p>
+
         ) : (
-          <ul class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6" role="list">
+
+          <ul
+            class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6"
+            role="list"
+          >
+
             {apps.map(app => (
-              <li>
-                <article class="relative group bg-brand-card border border-brand-border/60 rounded-2xl overflow-hidden hover:border-brand-accent/30 hover:bg-brand-surface transition-all duration-300 hover:-translate-y-1 hover:shadow-lg flex flex-col h-full">
-                  
-                  <!-- Preview area -->
-                  <div class="relative h-44 bg-brand-bg border-b border-brand-border/30 overflow-hidden shrink-0">
-                    <div class="absolute inset-0 bg-gradient-to-br from-brand-surface/30 via-transparent to-brand-accent/5"></div>
-                    {app.iconPath ? (
-                      <img
-                        src={app.iconPath}
-                        alt={`${app.name} preview`}
-                        class="absolute inset-0 w-full h-full object-cover opacity-60"
-                        loading="lazy"
-                        decoding="async"
-                      />
-                    ) : (
-                      <div class="absolute inset-0 flex items-center justify-center">
-                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1" stroke="currentColor" class="w-16 h-16 text-brand-border">
-                          <path stroke-linecap="round" stroke-linejoin="round" d="M10.5 1.5H8.25A2.25 2.25 0 0 0 6 3.75v16.5a2.25 2.25 0 0 0 2.25 2.25h7.5A2.25 2.25 0 0 0 18 20.25V3.75a2.25 2.25 0 0 0-2.25-2.25H13.5m-3 0V3h3V1.5m-3 0h3m-3 18.75h3" />
-                        </svg>
-                      </div>
-                    )}
-                    <!-- Status badge -->
-                    <span class={`absolute top-3 right-3 text-xs font-medium px-2 py-1 rounded-full border ${
-                      app.status === 'live'
-                        ? 'text-brand-accent border-brand-accent/30 bg-brand-accent/10'
-                        : app.status === 'beta'
-                        ? 'text-amber-400 border-amber-400/30 bg-amber-400/10'
-                        : 'text-brand-muted border-brand-border/60 bg-brand-card'
-                    }`}>
-                      {statusLabel[app.status ?? 'live']}
-                    </span>
-                  </div>
-
-                  <!-- Card body -->
-                  <div class="flex flex-col flex-1 p-5 gap-3">
-                    <header>
-                      <h2 class="font-sora text-lg font-semibold text-brand-text group-hover:text-brand-accent transition-colors leading-snug">
-                        <a
-                          href={`/apps/${app.slug}`}
-                          class="focus:outline-none focus:underline focus:decoration-brand-accent after:absolute after:inset-0"
-                        >
-                          {app.name}
-                        </a>
-                      </h2>
-                      <p class="text-xs text-brand-muted font-inter mt-0.5">{platformLabel[app.platform ?? 'cross-platform']}</p>
-                    </header>
-
-                    <p class="font-inter text-sm text-brand-muted leading-relaxed flex-1">
-                      {app.description}
-                    </p>
-
-                    <!-- Tags -->
-                    {(app.tags ?? []).length > 0 && (
-                      <footer class="flex flex-wrap gap-1.5 pt-1">
-                        {(app.tags ?? []).map(tag => (
-                          <span class="text-xs font-medium text-brand-muted bg-brand-bg px-2 py-0.5 rounded-md border border-brand-border/50">
-                            {tag}
-                          </span>
-                        ))}
-                      </footer>
-                    )}
-                  </div>
-                </article>
+              <li class="flex">
+                <AppCard {...app} />
               </li>
             ))}
+
           </ul>
+
         )}
 
       </div>
     </section>
+
   </main>
 
   <Footer />
