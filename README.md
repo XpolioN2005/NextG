@@ -1,43 +1,111 @@
-# Astro Starter Kit: Minimal
+# Next G Solution
 
-```sh
-npm create astro@latest -- --template minimal
-```
+A minimal static website built with Astro for publishing and showcasing apps, games, and small software projects under Next G Solution.
 
-> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
+The website originally existed for one extremely glamorous reason:
+hosting an `app-ads.txt` file.
 
-## 🚀 Project Structure
+Everything else was added later.
 
-Inside of your Astro project, you'll see the following folders and files:
+Now it acts as:
+
+- a lightweight landing page
+- an apps showcase
+- a central place for project links
+- and a public home for released software
+
+## Stack
+
+- Astro
+- TailwindCSS
+- Static site generation
+- Zero backend
+- Minimal JavaScript
+
+And yes, I am ashamed to admit it, but a large portion of this website was vibe coded using Antigravity CLI.
+
+## Philosophy
+
+This project intentionally avoids unnecessary complexity.
+
+No database.
+No authentication.
+No dashboard.
+No CMS.
+No bloated frontend framework hydration.
+
+Just static files, fast load times, and clean UI.
+
+## Features
+
+- Fully static Astro website
+- Apps & games listing page
+- Responsive layout
+- SEO-friendly pages
+- `app-ads.txt` hosting support
+- Minimal client-side JavaScript
+- Content collections for app data
+
+## Project Structure
 
 ```text
 /
 ├── public/
+│   └── app-ads.txt
+│
 ├── src/
+│   ├── components/
+│   ├── content/
+│   ├── layouts/
 │   └── pages/
-│       └── index.astro
+│
+├── astro.config.mjs
+├── tailwind.config.mjs
 └── package.json
 ```
 
-Astro looks for `.astro` or `.md` files in the `src/pages/` directory. Each page is exposed as a route based on its file name.
+## Development
 
-There's nothing special about `src/components/`, but that's where we like to put any Astro/React/Vue/Svelte/Preact components.
+Install dependencies:
 
-Any static assets, like images, can be placed in the `public/` directory.
+```bash
+npm install
+```
 
-## 🧞 Commands
+Start development server:
 
-All commands are run from the root of the project, from a terminal:
+```bash
+npm run dev
+```
 
-| Command                   | Action                                           |
-| :------------------------ | :----------------------------------------------- |
-| `npm install`             | Installs dependencies                            |
-| `npm run dev`             | Starts local dev server at `localhost:4321`      |
-| `npm run build`           | Build your production site to `./dist/`          |
-| `npm run preview`         | Preview your build locally, before deploying     |
-| `npm run astro ...`       | Run CLI commands like `astro add`, `astro check` |
-| `npm run astro -- --help` | Get help using the Astro CLI                     |
+Runs locally at:
 
-## 👀 Want to learn more?
+```text
+http://localhost:4321
+```
 
-Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
+## Production Build
+
+Build the site:
+
+```bash
+npm run build
+```
+
+Preview production build locally:
+
+```bash
+npm run preview
+```
+
+Production files are generated inside:
+
+```text
+/dist
+```
+
+## Notes
+
+This project is intentionally simple and probably overengineered for a site whose original purpose was literally just serving `app-ads.txt`.
+
+But at least it loads fast.
