@@ -5,16 +5,13 @@ import Footer from '../../components/Footer.astro';
 import AppCard from '../../components/AppCard.astro';
 import { getCollection } from 'astro:content';
 
-// Statically rendered — no client-side JS needed
 const allApps = await getCollection('apps');
 
-// Sort: featured first, then by name
 const apps = allApps
   .map(entry => entry.data)
   .sort((a, b) => {
     if (b.featured && !a.featured) return 1;
     if (a.featured && !b.featured) return -1;
-
     return a.name.localeCompare(b.name);
   });
 ---
@@ -47,24 +44,15 @@ const apps = allApps
     </section>
 
     <!-- Apps Grid -->
-    <section
-      class="py-20 px-6"
-      aria-label="All apps and games"
-    >
+    <section class="py-20 px-6" aria-label="All apps and games">
       <div class="max-w-[1200px] mx-auto">
 
         {apps.length === 0 ? (
-
           <p class="text-brand-muted font-inter text-center py-24 text-lg">
             No apps published yet. Check back soon.
           </p>
-
         ) : (
-
-          <ul
-            class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6"
-            role="list"
-          >
+          <ul class="grid grid-cols-2 md:grid-cols-3 gap-4 sm:gap-6" role="list">
 
             {apps.map(app => (
               <li class="flex">
@@ -73,7 +61,6 @@ const apps = allApps
             ))}
 
           </ul>
-
         )}
 
       </div>

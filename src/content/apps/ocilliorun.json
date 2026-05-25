@@ -1,0 +1,21 @@
+{
+	"name": "OscilloRun",
+	"tagline": "A minimalist endless runner with fast-paced obstacle dodging.",
+	"slug": "oscillorun",
+	"description": "OSCILLORUN is a minimalist endless runner that challenges players to navigate a black circle through a world of falling obstacles. Simple yet addictive, the game offers a fast-paced experience where you must dodge increasingly difficult obstacles.\n\nIn OSCILLORUN, players control a small black circle that continuously moves forward. Tap left or right to zigzag through falling geometric obstacles while surviving as long as possible. As the game progresses, the speed and difficulty increase, requiring quick reflexes and precise timing.\n\nThe game features a clean minimalist visual style with abstract geometric designs and immersive sound effects that intensify during gameplay. Endless Mode provides a constantly evolving challenge where every run feels unique.\n\nDeveloped by Xpolion and published by Next G Solution, OSCILLORUN is designed for players who enjoy simple mechanics combined with challenging gameplay.",
+	"tags": ["minimal", "endless runner", "arcade"],
+	"iconPath": "/apps/oscillorun/icon.webp",
+	"bannerPath": "/apps/oscillorun/banner.webp",
+	"screenshots": [
+		"/apps/oscillorun/1.webp",
+		"/apps/oscillorun/2.webp",
+		"/apps/oscillorun/3.webp",
+		"/apps/oscillorun/4.webp"
+	],
+	"featured": true,
+	"platform": "mobile",
+	"status": "live",
+	"playStoreUrl": "https://play.google.com/store/apps/details?id=com.nextgsolution.oscillorun",
+	"privacyPolicy": "Coming soon",
+	"terms": "Coming soon"
+}

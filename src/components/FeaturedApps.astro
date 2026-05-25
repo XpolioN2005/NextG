@@ -3,39 +3,45 @@ import AppCard from './AppCard.astro';
 import { getCollection } from 'astro:content';
 
 const allApps = await getCollection('apps');
-// Show featured apps first, then the rest — all statically rendered
+
+// Featured first
 const apps = allApps
   .map(entry => entry.data)
   .sort((a, b) => (b.featured ? 1 : 0) - (a.featured ? 1 : 0));
 ---
 
 <section id="apps" class="w-full py-24 bg-brand-bg relative z-10" aria-labelledby="apps-heading">
-  <div class="max-w-[1200px] mx-auto px-4">
+
   <div class="max-w-[1200px] mx-auto px-6 mb-12">
-    <h2 id="apps-heading" class="font-sora text-3xl font-semibold text-brand-text mb-4">Featured Experiences</h2>
+    <h2 id="apps-heading" class="font-sora text-3xl font-semibold text-brand-text mb-4">
+      Featured Experiences
+    </h2>
     <p class="font-inter text-brand-muted max-w-2xl text-lg">
       Our carefully curated selection of software. Built for clarity, performance, and peace of mind.
     </p>
   </div>
 
   <!-- Swipeable Card Rail -->
-  <div class="w-full overflow-x-auto pt-4 pb-8 hide-scrollbar scroll-smooth snap-x snap-mandatory px-6 md:px-0">
-    <div class="max-w-[1200px] mx-auto flex gap-6 w-max md:w-auto snap-center">
+  <div class="w-full overflow-x-auto pt-4 pb-8 hide-scrollbar scroll-smooth px-6">
+    <div class="flex gap-6">
+
       {apps.map(app => (
-        <div class="snap-start scroll-ml-6">
+        <div class="snap-start shrink-0 w-[85vw] sm:w-[280px] md:w-[320px]">
           <AppCard {...app} />
         </div>
       ))}
+
     </div>
   </div>
-  </div>
+
 </section>
 
 <style>
-  /* Hide scrollbar for cleaner look but keep functionality */
+  /* Hide scrollbar but keep scrolling */
   .hide-scrollbar::-webkit-scrollbar {
     display: none;
   }
+
   .hide-scrollbar {
     -ms-overflow-style: none;
     scrollbar-width: none;
